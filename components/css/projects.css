@@ -1,0 +1,361 @@
+.projects-section {
+    padding: 80px 0;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    position: relative;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #2d2d2d;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-image:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+.project-links {
+    display: flex;
+    gap: 20px;
+}
+
+.project-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: #ffffff48;
+    color: #1a1a1a;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.project-content p {
+    color: #404040;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tech-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0f0f0;
+    color: #404040;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+/* Custom colors for different tech tags */
+.tech-tag:has(.fa-laravel) { color: #FF2D20; }
+.tech-tag:has(.fa-php) { color: #777BB4; }
+.tech-tag:has(.fa-html5) { color: #E34F26; }
+.tech-tag:has(.fa-css3-alt) { color: #1572B6; }
+.tech-tag:has(.fa-css3) { color: #38B2AC; } /* Tailwind color */
+.tech-tag:has(.fa-js) { color: #F7DF1E; }
+.tech-tag:has(.fa-database) { color: #4479A1; }
+.tech-tag:has(.fa-docker) { color: #2496ED; }
+.tech-tag:has(.fa-bolt) { color: #646CFF; } /* Vite color */
+
+.tech-tag:hover {
+    background: #2d2d2d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .project-tech {
+        gap: 8px;
+    }
+    
+    .tech-tag {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .projects-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+    }
+
+    .project-link {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Add these styles to your existing CSS */
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+/* Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .prev, .next {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .dots-container {
+        bottom: 15px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
+/* Add these new styles */
+.project-year {
+    background: #f0f0f0;
+    color: #666;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.project-card {
+    background: #ffffff28;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 40px;
+}
+
+.project-card:not(.featured) {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-card:not(.featured) .project-image {
+    aspect-ratio: 16/9;
+}
+
+/* Custom colors for Bootstrap */
+.tech-tag:has(.fa-bootstrap) { 
+    color: #7952B3;
+}
+
+@media (max-width: 768px) {
+    .project-year {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+    
+    .project-card:not(.featured) {
+        margin-bottom: 30px;
+    }
+}

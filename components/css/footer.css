@@ -1,0 +1,43 @@
+.footer-content {
+    background-color: #e8e8e8;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.footer-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+/* Add these new styles */
+.footer-section p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.footer-section a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-section a:hover {
+    color: #3498db;
+}
+
+.footer-section i.fab {
+    font-size: 1.1rem;
+    margin-right: 3px;
+}
