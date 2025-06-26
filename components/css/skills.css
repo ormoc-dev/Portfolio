@@ -40,6 +40,7 @@
     border: 1px solid #e0e0e0;
 }
 
+
 .skill-category h3 {
     font-size: 1.4rem;
     color: #2d2d2d;
@@ -94,6 +95,13 @@
 .skill-item:has(.fa-bootstrap) i { color: #7952B3; }
 .skill-item:has(.fa-database) i { color: #4479A1; }
 .skill-item:has(.fa-paypal) i { color: #00457C; }
+.skill-item:has(.fa-docker) i { color: #2496ED; }
+.skill-item:has(.fa-vuejs) i { color: #42b883; }
+.skill-item:has(.fa-postman) i { color: #FF6C37; }
+.skill-item:has(.fa-js):has(span:contains('TypeScript')) i { color: #3178C6; }
+.skill-item:has(.fa-figma) i { color: #F24E1E; }
+.skill-item:has(.fa-gitlab) i { color: #FC6D26; }
+.skill-item:has(.fa-slack) i { color: #611f69; }
 
 .achievements {
     grid-column: 1 / -1;
@@ -167,5 +175,155 @@
 
     .achievement-item {
         padding: 10px 15px;
+    }
+}
+
+.ojt-skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ojt-employer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.ojt-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-left: 28px;
+}
+
+.ojt-project-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ojt-project-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ojt-company-name {
+    font-weight: 700;
+    color: #2d2d2d;
+    font-size: 1.08em;
+}
+
+.ojt-company-position {
+    color: #888;
+    font-size: 0.98em;
+}
+
+.ojt-projects-title {
+    font-size: 0.98em;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.ojt-technologies {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: 4px;
+}
+
+.ojt-project-logo {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.ojt-employer-logo {
+    height: 28px;
+    width: 28px;
+    vertical-align: middle;
+}
+
+.ojt-project-link a {
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+@media (max-width: 768px) {
+    .ojt-skill-items {
+        gap: 12px;
+    }
+    .ojt-employer {
+        gap: 7px;
+        margin-bottom: 6px;
+    }
+    .ojt-projects {
+        margin-left: 16px;
+        gap: 2px;
+    }
+    .ojt-project-links {
+        gap: 6px;
+        display: grid;
+    }
+    .ojt-project-link {
+        gap: 4px;
+    }
+    .ojt-company-name {
+        font-size: 1em;
+    }
+    .ojt-company-position {
+        font-size: 0.92em;
+    }
+    .ojt-projects-title {
+        font-size: 0.92em;
+    }
+    .ojt-technologies {
+        font-size: 0.9em;
+    }
+    .ojt-project-logo {
+        height: 16px;
+        width: 16px;
+    }
+    .ojt-employer-logo {
+        height: 42px;
+        width: 42px;
+    }
+}
+.picture-in-each-project {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 12px auto 0 auto;
+    border-radius: 10px;
+  
+    object-fit: cover;
+  
+}
+
+@media (max-width: 992px) {
+    .picture-in-each-project {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .picture-in-each-project {
+        width: 160px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .picture-in-each-project {
+        width: 100%;
+        min-width: 0;
+        margin-top: 8px;
+        border-radius: 7px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
     }
 }
